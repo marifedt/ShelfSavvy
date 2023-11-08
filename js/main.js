@@ -58,7 +58,7 @@ function displayBooks(){
         const readImgElement = read.querySelector('.read-status');
         const readImg = document.createElement('img');
         readImg.classList.add('icons')
-        readImg.src = `${book.read ?'img/check-decagram.svg' : '/img/alpha-x-box.svg'}`;
+        readImg.src = `${book.read ?'img/check-decagram.svg' : 'img/alpha-x-box.svg'}`;
         readImg.alt = 'Read Status Icon';
         readImgElement.appendChild(readImg);
 
