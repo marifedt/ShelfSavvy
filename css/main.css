@@ -1,0 +1,200 @@
+:root {
+    --main-bg-color: #FFFFFF;
+    --main-text-color: #172A3A;
+    --secondary-bg-color: #75DDDD;
+    --accent-color: #09BC8A;
+    --dark-text-color: #004346;
+    --nav-bg-color: #508991;
+    box-sizing: border-box;
+}
+
+body{
+    
+    display: grid;
+    grid-template-rows: 80px auto 30px;
+    height: 100vh;
+    grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+
+header{
+    grid-area: header;
+    background-color: var(--main-bg-color);
+    display: grid;
+    grid-template-columns: 1fr max(200px);
+    grid-template-rows: max(80px);
+    box-shadow: 0px 5px 10px 2px rgba(105, 105, 105, 0.315);
+}
+
+header h1{
+    padding-left: 20px;
+}
+
+header h1 > span{
+    color: var(--secondary-bg-color);
+}
+
+footer{
+    grid-area: footer;
+    background-color: var(--nav-bg-color);
+    display: flex;
+    color: var(--main-text-color);
+    justify-content: center;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+main{
+    grid-area: main;
+    overflow-y: auto;
+    display: grid;
+}
+
+.bookList{
+    height: fit-content;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center;
+    gap: 15px;
+    justify-items: start;
+}
+
+#showAddBookDialog{
+   margin: 20px;
+   background-color: var(--nav-bg-color);
+   border: none;
+   color: var(--main-text-color);
+   font-weight: 900;
+   transition: transform 0.3s ease-in-out, color 0.3s ease-out;
+}
+
+#showAddBookDialog:hover{
+    color: var(--main-bg-color);
+    transform: scale(1.1);
+}
+
+#newBookDialog{
+    border: none;
+    background-color: var(--main-bg-color);
+    min-width: 300px;
+    width: 350px;
+    height: 250px;
+    min-height: 200px;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 10px 2px rgba(105, 105, 105, 0.315);
+}
+
+#addBook{
+    height: inherit;
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.form-control{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    align-items: center;
+    color: var(--main-text-color);
+    
+}
+
+.form-control #pages{
+    max-width: 80px;
+}
+
+/* Read Checkbox */
+.form-control:last-of-type {
+    grid-template-columns: auto 1fr;
+}
+
+.form-control input{
+    border: 2px solid var(--dark-text-color);
+    margin: 5px;
+    outline: none;
+}
+
+#btnAddBook{
+    color: var(--main-bg-color);
+    background-color: var(--dark-text-color);
+    border: none;
+    border-radius: 20px;
+    width: 150px;
+    font-weight: bold;
+    justify-self: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+#btnAddBook:hover{
+    animation: buttonHover 0.7s infinite alternate;
+    background-color: var(--accent-color);
+   
+}
+
+@keyframes buttonHover {
+    0%{
+        transform: scale(1);
+    }
+
+    100%{
+        transform: scale(1.1);
+    }
+}
+
+.bookCard{
+    border: 1px solid var(--dark-text-color);
+    padding: 5px;
+    min-width: 200px;
+    text-align: center;
+  
+    background-color: var(--main-bg-color);
+    box-shadow: 12px 5px 5px 1px #5a5a5a8e;
+    border-top: 10px solid #004346;
+    border-right: 10px solid var(--dark-text-color);
+    border-bottom: 10px solid var(--dark-text-color);
+    border-left: 10px solid var(--accent-color);
+    display: grid;
+}
+
+.cardBtns{
+    padding: 0 20px 10px 0;
+    justify-self: end;
+}
+
+.icons{
+    max-width: 35px;
+    min-width: 25px;
+}
+
+.bookCardBtn{
+    border: none;
+    background-color: transparent;
+    transition: transform 0.2s ease-in-out
+}
+
+.bookCardBtn:hover{
+    transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 767px) {
+   .bookCard{
+        width: 80%;
+        justify-self: center;
+   }
+  }
+
+@media screen and (min-width: 1200px) {
+    .bookList{
+        max-width: 50%;
+        width: 100%;
+        height: fit-content;        
+        justify-self: center;
+    }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Library App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/html5boilerplate.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <header>
+    <h1>Shelf<span>Savvy</span></h1>
+    <button id="showAddBookDialog">New  Book</button> 
+  </header>
+  <main>
+    <!-- Modal Dialog for Adding a New Book -->
+  <dialog id="newBookDialog">
+    <form id="addBook" action="" method="post">
+      <div class="form-control">
+        <label for="title">Title <span style="color: red;">*</span></label>
+        <input type="text" name="title" id="title" required/>
+      </div>
+  
+      <div class="form-control">
+        <label for="author">Author <span style="color: red;">*</span></label>
+        <input type="text" name="author" id="author" required oninput="this.value = this.value.replace(/[^A-Za-z\s]/g, '')"/>
+      </div>
+      
+      <div class="form-control">
+        <label for="pages">Pages <span style="color: red;">*</span></label>
+        <input type="text" name="pages" id="pages" oninput="this.value = this.value.replace(/\D/g, '')" maxlength="5" required />
+      </div>
+  
+      <div class="form-control">
+        <label for="read">Have you read it?</label>
+        <input type="checkbox" name="read" id="read" />
+      </div>
+      
+      <input type="submit" value="Add Book" class="btn" id="btnAddBook" />
+    </form>
+  </dialog>
+  
+  
+  <div class="bookList"></div>
+  </main>
+  <footer>Made by Marife Dela Torre © 2023</footer>
+  
+
+  <script src="js/vendor/modernizr-3.11.2.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+</body>
+
+</html>
