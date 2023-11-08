@@ -58,7 +58,7 @@ function displayBooks(){
         const readImgElement = read.querySelector('.read-status');
         const readImg = document.createElement('img');
         readImg.classList.add('icons')
-        readImg.src = `${book.read ?'../img/check-decagram.svg' : '../img/alpha-x-box.svg'}`;
+        readImg.src = `${book.read ?'img/check-decagram.svg' : '/img/alpha-x-box.svg'}`;
         readImg.alt = 'Read Status Icon';
         readImgElement.appendChild(readImg);
 
@@ -68,7 +68,7 @@ function displayBooks(){
 
         const removeImg = document.createElement('img');
         removeImg.classList.add('icons')
-        removeImg.src = '../img/book-remove.svg';
+        removeImg.src = 'img/book-remove.svg';
         removeImg.alt = 'Remove Book Icon';
         removeBtn.appendChild(removeImg);
 
@@ -76,7 +76,7 @@ function displayBooks(){
         toggleReadBtn.classList.add('bookCardBtn')
         const togglerReadImg = document.createElement('img');
         togglerReadImg.classList.add('icons')
-        togglerReadImg.src = `${book.read ? '../img/eye-remove.svg' : '../img/eye-plus.svg'}`;
+        togglerReadImg.src = `${book.read ? 'img/eye-remove.svg' : 'img/eye-plus.svg'}`;
         togglerReadImg.alt = 'Read or Unread Icon';
         toggleReadBtn.appendChild(togglerReadImg);
 
@@ -89,14 +89,14 @@ function displayBooks(){
             toggleReadBtn.removeChild(toggleReadBtn.querySelector('img'));
             const img = document.createElement('img');
             img.classList.add('icons')
-            img.src = myLibrary[bookIndex].read ? '../img/eye-remove.svg' : '../img/eye-plus.svg';
+            img.src = myLibrary[bookIndex].read ? 'img/eye-remove.svg' : 'img/eye-plus.svg';
             img.alt = 'Read or Unread Icon';
             toggleReadBtn.appendChild(img)
 
             readStatusElement.removeChild(readStatusElement.querySelector('img'));
             const statusImg = document.createElement('img');
             statusImg.classList.add('icons')
-            statusImg.src = myLibrary[bookIndex].read ?'../img/check-decagram.svg' : '../img/alpha-x-box.svg';
+            statusImg.src = myLibrary[bookIndex].read ?'img/check-decagram.svg' : 'img/alpha-x-box.svg';
             statusImg.alt = 'Read Status Icon';
             readStatusElement.appendChild(statusImg);
         });
